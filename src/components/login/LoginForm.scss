@@ -1,0 +1,27 @@
+
+
+.login-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    .box-login{
+       width: 50%;
+       margin-top: 100px;
+       display: flex;
+       justify-content: center;
+       align-items: center ;
+       flex-direction: column;
+       .form-login{
+            width: 100%;
+            .form-button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button{
+                border-radius: 5px;
+            }
+            }
+        }
+    }
+}
