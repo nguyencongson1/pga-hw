@@ -1,5 +1,6 @@
 
 
 const API_URL="https://api.gearfocus.div4.pgtest.co/api"
+const API_URL1="//api.training.div3.pgtest.co/api/v1"
 
-export default API_URL;
+export { API_URL ,API_URL1}  ;

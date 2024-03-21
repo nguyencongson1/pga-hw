@@ -4,6 +4,8 @@ import { Button, Checkbox, Form, Input } from "antd";
 
 import logo from '../../assets/images/logo-pwa.png'
 import  {login}  from "../../service/api-service";
+import { setItem } from "../../utils/storage-utils";
+import { useNavigate } from 'react-router-dom';
 
 interface ILoginForm{
     email:string,
@@ -11,13 +13,13 @@ interface ILoginForm{
 }
 
 export default function LoginForm(){
-
+    const navigate = useNavigate();
     const onFinish=(value :ILoginForm)=> {
-        console.log("thanh cong",value);
+        // console.log("thanh cong",value);
         login(value)
             .then((res)=>{
                 if(res?.success == true){
-                    localStorage.setItem("key",res.user_cookie)
+                    setItem("key",res.user_cookie)
                     
                 }
                 if(res.user == false){
@@ -70,6 +72,9 @@ export default function LoginForm(){
                     <Form.Item className="form-button"  >
                         <Button type="primary" htmlType="submit">
                             Đăng nhập
+                        </Button>
+                        <Button onClick={()=> navigate('/sign-up')}>
+                            Đăng ký
                         </Button>
                     </Form.Item>
                 </Form>
