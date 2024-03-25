@@ -28,3 +28,9 @@ export interface IOptionCity{
     value:string | number;
     label:string
 }
+export interface IInfoCard{
+    name:string;
+    age:string;
+    address:string;
+    avatar:string;
+}
