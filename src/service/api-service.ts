@@ -12,7 +12,7 @@ const instance1 = axios.create({
 
 export const login = async (param: ILoginForm ) => {
     try {
-        const res = await instance.post("/authentication/login", param);
+        const res = await instance1.post("/auth/login", param);
         console.log("Response from login API:", res.data);
         return res.data;
     } catch (error) {
@@ -20,6 +20,23 @@ export const login = async (param: ILoginForm ) => {
         throw error; 
     }
 };
+
+export const getProducts= async() =>{
+    try{
+        const token= localStorage.getItem("token")
+        if(token){
+            const config={
+                headers: {
+                    Authorization:token
+                }
+            }
+            const res =await instance1.get("/product",config)
+            return res.data;
+        }
+    }catch(err){
+        throw err
+    }
+}
 
 export const getLocation= async () =>{
     try{

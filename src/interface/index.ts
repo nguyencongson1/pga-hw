@@ -13,6 +13,15 @@ export interface ISignUp{
     region:string,
     city:string,
 }
+export interface IProductRes{
+    id:number;
+    status:string;
+    currency:string;
+    total:string;
+    client:string;
+    createdAt:string;
+    invoice:string;
+}
 export interface ILocalStorage{
     key:string;
     value?:string | number;

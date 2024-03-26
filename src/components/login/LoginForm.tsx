@@ -19,18 +19,15 @@ export default function LoginForm() {
     // console.log("thanh cong",value);
     login(value)
       .then((res) => {
-        if (res?.success === true) {
-          storeRedux.dispatch(setToken(res.user_cookie));
-          setItem("key", res.user_cookie);
+        if (res?.code === 200) {
+          storeRedux.dispatch(setToken(res.data.token));
+          setItem("token", res.data.token);
         }
-        if (res.user === false) {
-          alert(res?.errors?.email);
-        }
-        console.log("aa", localStorage.getItem("key"));
+        console.log("aa", localStorage.getItem("token"));
       })
       .catch((err) => {});
   };
-  console.log("sasdasdasdasdasdasdasdasd", storeRedux.getState());
+  // console.log("sasdasdasdasdasdasdasdasd", storeRedux.getState());
   return (
     <div className="login-container">
       <div className="box-login">
@@ -38,7 +35,6 @@ export default function LoginForm() {
         <Form
           labelCol={{ span: 24 }}
           wrapperCol={{ span: 24 }}
-          initialValues={{ remember: true }}
           onFinish={onFinish}
           // onFinishFailed={onFinishFailed}
           autoComplete="off"
@@ -65,15 +61,6 @@ export default function LoginForm() {
           >
             <Input.Password />
           </Form.Item>
-
-          <Form.Item
-            className="form-item"
-            name="remember"
-            valuePropName="checked"
-          >
-            <Checkbox>Lưu mật khẩu đăng nhập</Checkbox>
-          </Form.Item>
-
           <Form.Item className="form-button">
             <Button type="primary" htmlType="submit">
               Đăng nhập

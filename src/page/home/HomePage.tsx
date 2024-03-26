@@ -1,10 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import "./HomePage.scss";
 import { Avatar, Button } from "antd";
-import logo from "../../assets/images/logo-pwa.png";
 import { setInfoCard, storeRedux } from "../../redux/store-redux";
 export default function HomePage() {
-  //   const [isDisable, setIsDisable] = useState(true);
   const [check, setCheck] = useState(true);
   const [dataCard, setDataCard] = useState([
     {
@@ -50,9 +48,6 @@ export default function HomePage() {
   useEffect(() => {
     storeRedux.dispatch(setInfoCard(dataCard));
   }, [check, dataCard]);
-  //   console.log("datacard", dataCard);
-  //   console.log("redux", storeRedux.getState());
-  //   console.log("aaaaaaaaaaaaaaaaaa", dataCard === initCard);
   const checkDisable = () => {
     return dataCard.every((item, index) => {
       const initItem = initCard[index];
@@ -97,39 +92,42 @@ export default function HomePage() {
                   <Avatar size={124} src={item.avatar} />
                 </div>
                 <div className="text-info">
-                  <p>
+                  <div>
                     Tên:{" "}
-                    <div
+                    <p
+                      suppressContentEditableWarning={true}
                       contentEditable={true}
                       onBlur={(e) =>
                         handleEdit(e.target.innerText, "name", index)
                       }
                     >
                       {item.name}
-                    </div>
-                  </p>
-                  <p>
+                    </p>
+                  </div>
+                  <div>
                     Tuổi:{" "}
-                    <div
+                    <p
+                      suppressContentEditableWarning={true}
                       contentEditable={true}
                       onBlur={(e) =>
                         handleEdit(e.target.innerText, "age", index)
                       }
                     >
                       {item.age}
-                    </div>
-                  </p>
-                  <p>
+                    </p>
+                  </div>
+                  <div>
                     Địa Chỉ:{" "}
-                    <div
+                    <p
+                      suppressContentEditableWarning={true}
                       contentEditable={true}
                       onBlur={(e) =>
                         handleEdit(e.target.innerText, "address", index)
                       }
                     >
                       {item.address}
-                    </div>
-                  </p>
+                    </p>
+                  </div>
                 </div>
               </div>
             );
