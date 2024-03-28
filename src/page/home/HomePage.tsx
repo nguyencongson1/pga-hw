@@ -9,25 +9,25 @@ export default function HomePage() {
       name: "Son",
       age: "24",
       address: "HaNoi",
-      avatar: "../../assets/images/logo-pwa.png",
+      avatar: require("../../assets/images/logo-pwa.png"),
     },
     {
       name: "Nam",
       age: "23",
       address: "Hai Duong",
-      avatar: "../../assets/images/logo-pwa.png",
+      avatar: require("../../assets/images/logo-pwa.png"),
     },
     {
       name: "Hung",
       age: "22",
       address: "Nam Dinh",
-      avatar: "../../assets/images/logo-pwa.png",
+      avatar: require("../../assets/images/logo-pwa.png"),
     },
     {
       name: "Lien",
       age: "24",
       address: "HaNoi",
-      avatar: "../../assets/images/logo-pwa.png",
+      avatar: require("../../assets/images/logo-pwa.png"),
     },
   ]);
 

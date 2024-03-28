@@ -14,13 +14,17 @@ export interface ISignUp{
     city:string,
 }
 export interface IProductRes{
-    id:number;
-    status:string;
-    currency:string;
-    total:string;
-    client:string;
-    createdAt:string;
-    invoice:string;
+    id?:number;
+    status?:string;
+    currency?:string;
+    total?:string;
+    client?:string;
+    createdAt?:string;
+    invoice?:string;
+    order?:string;
+    fundingMethod?:string;
+    updatedAt?:string;
+    createdBy?:string;
 }
 export interface ILocalStorage{
     key:string;
@@ -42,4 +46,24 @@ export interface IInfoCard{
     age:string;
     address:string;
     avatar:string;
+}
+export interface typeUpdate {
+    type: "add" | "edit";
+    id?: number;
+  }
+export interface IProfile{
+    id:number;
+    email:string;
+    name:string;
+    gender:string;
+    avatar:string;
+    region:number;
+    state:number;
+    description: null;
+}
+export interface IResProfile{
+    message:string;
+    error:boolean;
+    code:number;
+    data?:IProfile;
 }

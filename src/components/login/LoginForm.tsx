@@ -1,6 +1,6 @@
 import React from "react";
 import "./LoginForm.scss";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 
 import logo from "../../assets/images/logo-pwa.png";
 import { login } from "../../service/api-service";
@@ -16,18 +16,17 @@ interface ILoginForm {
 export default function LoginForm() {
   const navigate = useNavigate();
   const onFinish = (value: ILoginForm) => {
-    // console.log("thanh cong",value);
     login(value)
       .then((res) => {
         if (res?.code === 200) {
           storeRedux.dispatch(setToken(res.data.token));
           setItem("token", res.data.token);
+          navigate("/payroll-list");
         }
         console.log("aa", localStorage.getItem("token"));
       })
       .catch((err) => {});
   };
-  // console.log("sasdasdasdasdasdasdasdasd", storeRedux.getState());
   return (
     <div className="login-container">
       <div className="box-login">
@@ -36,7 +35,6 @@ export default function LoginForm() {
           labelCol={{ span: 24 }}
           wrapperCol={{ span: 24 }}
           onFinish={onFinish}
-          // onFinishFailed={onFinishFailed}
           autoComplete="off"
           className="form-login"
         >
