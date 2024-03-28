@@ -1,0 +1,112 @@
+.payroll-container{
+    .content-box{
+        padding: 30px;
+        background-color: #f5f5ff;
+        .first-map{
+            width: 92%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            .add-btn{
+                font-size: 18px;
+                font-weight: 600;
+                height: 40px;
+                width: 100px;
+            }
+            .first-title{
+                font-size: 28px;
+                color: #1f2964;
+                font-weight: 800;
+            }
+        }
+        .global-button{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            align-items: center;
+            padding-top:30px;
+            .left-btn{
+                display: flex;
+                align-items: center;
+                gap:30px;
+                .date-btn{
+                    width: 200px;
+                    height:40px;
+                }
+            }
+            .right-btn{
+                display: flex;
+                align-items: center;
+                gap:30px;
+                .apply-btn{
+                    width: 100px;
+                    height:40px;
+                    color: #5fdbf9;
+                    border: solid ;
+                    font-weight: 600;
+                    font-size: 18px;
+                }
+                .clear-btn{
+                    width: 100px;
+                    height:40px;
+                    color:red;
+                    font-weight: 600;
+                    border-color: red;
+                }
+            }
+        }
+        .table-box{
+            margin-top: 2%;
+            width: 90%;
+            margin-left: 5%;
+            .table-content{
+                .ant-table-thead > tr > th{
+                    color:#1f2964;
+                    font-size: 18px;
+                }
+                .text-table{
+                    color:#1f2964;
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+                .yellow{
+                    color:#efbc08;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+                .green{
+                    color: #00ff00;
+                    font-weight: 600;
+                    font-size: 16px;
+                }   
+                .none{
+                    color:#333;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+                .aqua{
+                    color:aqua;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+                .action-btn{
+                    display: flex;
+                    gap: 10px;
+                    flex-direction: row;
+                    .update-btn{
+                        color:#00ff00;
+                        border-color: #00ff00;
+                        font-weight: 600;
+                        font-size: 16px;
+                    }
+                    .delete-btn{
+                        color: red;
+                        border-color: red;
+                    }
+                }
+            }
+
+        }
+    }
+}
